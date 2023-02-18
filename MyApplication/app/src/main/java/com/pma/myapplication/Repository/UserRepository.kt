@@ -6,7 +6,7 @@ import com.pma.myapplication.model.User
 
 class UserRepository {
 
-    private val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference("users")
+    private val databaseReference: DatabaseReference = FirebaseDatabase.getInstance("https://pmaapp-4b732-default-rtdb.europe-west1.firebasedatabase.app").getReference("users")
 
     @Volatile private var INSTANCE: UserRepository ?= null
 

@@ -1,5 +1,6 @@
 package com.pma.myapplication.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,9 +28,11 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
         val currentItem = userList[position]
 
-        Picasso.get().load(currentItem.image).error(R.mipmap.ic_launcher).into(holder.image)
+        Picasso.get().load(currentItem.image).into(holder.image)
 
-        val value = currentItem.value
+        holder.value.text = currentItem.value
+
+        println(currentItem.image + " " + currentItem.value)
 
     }
 
