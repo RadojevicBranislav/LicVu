@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/a1"
     tools:context=".InfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/img_srb"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/laguage_change_icon_for_serbian"
+        android:src="@drawable/srbija" />
+
+    <ImageView
+        android:id="@+id/img_usa"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/laguage_change_icon_for_english"
+        android:src="@drawable/amerika" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/App_info"
+        android:layout_width="102dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/app_info"
+        android:textColor="@color/darker_white"
+        android:textSize="24sp"
+        tools:text="App Info" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="375dp"
+        android:layout_height="473dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="105dp"
+        android:background="@color/more_darker_green"
+        android:text="@string/string_srb"
+        android:textAlignment="center"
+        android:textColor="@color/darker_white"
+        android:textSize="20sp" />
+
 
 </FrameLayout>
