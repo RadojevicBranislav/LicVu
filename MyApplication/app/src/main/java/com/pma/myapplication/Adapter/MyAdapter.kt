@@ -32,7 +32,7 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
         holder.value.text = currentItem.value
 
-        println(currentItem.image + " " + currentItem.value)
+        //println(currentItem.image + " " + currentItem.value)
 
     }
 
