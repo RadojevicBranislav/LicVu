@@ -32,6 +32,8 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
         holder.value.text = currentItem.value
 
+        holder.rating.text = currentItem.rating
+
         //println(currentItem.image + " " + currentItem.value)
 
     }
@@ -53,6 +55,8 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
         val image: ImageView = itemView.findViewById(R.id.rcvImg)
 
         val value: TextView = itemView.findViewById(R.id.currency_name)
+
+        val rating : TextView = itemView.findViewById(R.id.astronaut_craft)
     }
 
 }
