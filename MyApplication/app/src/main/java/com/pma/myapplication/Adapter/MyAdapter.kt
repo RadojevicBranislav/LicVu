@@ -32,7 +32,7 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
         holder.value.text = currentItem.value
 
-        holder.rating.text = currentItem.rating
+        holder.rating.text = currentItem.rating + " kcal"
 
         //println(currentItem.image + " " + currentItem.value)
 

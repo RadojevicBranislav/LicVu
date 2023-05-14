@@ -74,7 +74,7 @@
         android:layout_width="160dp"
         android:layout_height="201dp"
         android:contentDescription="@string/logo"
-        android:src="@drawable/ic_baseline_attach_money_24"
+        android:src="@drawable/ic_baseline_shopping_basket_24"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
