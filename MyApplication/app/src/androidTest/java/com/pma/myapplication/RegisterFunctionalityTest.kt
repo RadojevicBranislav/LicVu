@@ -20,14 +20,14 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class SignInActivityTest2 {
+class RegisterFunctionalityTest {
 
     @Rule
     @JvmField
     var mActivityScenarioRule = ActivityScenarioRule(SignInActivity::class.java)
 
     @Test
-    fun signInActivityTest2() {
+    fun registerFunctionalityTest() {
         val materialTextView = onView(
             allOf(
                 withId(R.id.textView), withText("Don't have an account? Register."),
@@ -56,7 +56,7 @@ class SignInActivityTest2 {
                 isDisplayed()
             )
         )
-        appCompatEditText.perform(replaceText("veljanevolja@gmail.com"), closeSoftKeyboard())
+        appCompatEditText.perform(replaceText("pajo2@gmail.com"), closeSoftKeyboard())
 
         val appCompatEditText2 = onView(
             allOf(
@@ -71,9 +71,24 @@ class SignInActivityTest2 {
                 isDisplayed()
             )
         )
-        appCompatEditText2.perform(replaceText("123123"), closeSoftKeyboard())
+        appCompatEditText2.perform(replaceText("pajo123"), closeSoftKeyboard())
 
         val appCompatEditText3 = onView(
+            allOf(
+                withId(R.id.editTextTextPassword), withText("pajo123"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText3.perform(pressImeActionButton())
+
+        val appCompatEditText4 = onView(
             allOf(
                 withId(R.id.editTextTextPassword2),
                 childAtPosition(
@@ -86,11 +101,11 @@ class SignInActivityTest2 {
                 isDisplayed()
             )
         )
-        appCompatEditText3.perform(replaceText("123123"), closeSoftKeyboard())
+        appCompatEditText4.perform(replaceText("pajo123"), closeSoftKeyboard())
 
-        val appCompatEditText4 = onView(
+        val appCompatEditText5 = onView(
             allOf(
-                withId(R.id.editTextTextPassword2), withText("123123"),
+                withId(R.id.editTextTextPassword2), withText("pajo123"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -101,7 +116,7 @@ class SignInActivityTest2 {
                 isDisplayed()
             )
         )
-        appCompatEditText4.perform(pressImeActionButton())
+        appCompatEditText5.perform(pressImeActionButton())
 
         val materialButton = onView(
             allOf(
@@ -118,7 +133,7 @@ class SignInActivityTest2 {
         )
         materialButton.perform(click())
 
-        val appCompatEditText5 = onView(
+        val appCompatEditText6 = onView(
             allOf(
                 withId(R.id.editTextTextEmailAddress),
                 childAtPosition(
@@ -131,9 +146,9 @@ class SignInActivityTest2 {
                 isDisplayed()
             )
         )
-        appCompatEditText5.perform(replaceText("veljanevolja@gmail.com"), closeSoftKeyboard())
+        appCompatEditText6.perform(replaceText("pajo2@gmail.com"), closeSoftKeyboard())
 
-        val appCompatEditText6 = onView(
+        val appCompatEditText7 = onView(
             allOf(
                 withId(R.id.editTextTextPassword),
                 childAtPosition(
@@ -146,11 +161,11 @@ class SignInActivityTest2 {
                 isDisplayed()
             )
         )
-        appCompatEditText6.perform(replaceText("123123"), closeSoftKeyboard())
+        appCompatEditText7.perform(replaceText("pajo123"), closeSoftKeyboard())
 
-        val appCompatEditText7 = onView(
+        val appCompatEditText8 = onView(
             allOf(
-                withId(R.id.editTextTextPassword), withText("123123"),
+                withId(R.id.editTextTextPassword), withText("pajo123"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -161,7 +176,7 @@ class SignInActivityTest2 {
                 isDisplayed()
             )
         )
-        appCompatEditText7.perform(pressImeActionButton())
+        appCompatEditText8.perform(pressImeActionButton())
 
         val materialButton2 = onView(
             allOf(
@@ -192,78 +207,6 @@ class SignInActivityTest2 {
             )
         )
         bottomNavigationItemView.perform(click())
-
-        val appCompatImageView = onView(
-            allOf(
-                withId(R.id.img_usa), withContentDescription("Language change icon for English"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.app),
-                        childAtPosition(
-                            withId(R.id.frame_layout),
-                            0
-                        )
-                    ),
-                    1
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatImageView.perform(click())
-
-        val appCompatImageView2 = onView(
-            allOf(
-                withId(R.id.img_srb), withContentDescription("Language change icon for Serbian"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.app),
-                        childAtPosition(
-                            withId(R.id.frame_layout),
-                            0
-                        )
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatImageView2.perform(click())
-
-        val appCompatImageView3 = onView(
-            allOf(
-                withId(R.id.img_usa), withContentDescription("Language change icon for English"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.app),
-                        childAtPosition(
-                            withId(R.id.frame_layout),
-                            0
-                        )
-                    ),
-                    1
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatImageView3.perform(click())
-
-        val appCompatImageView4 = onView(
-            allOf(
-                withId(R.id.img_srb), withContentDescription("Language change icon for Serbian"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.app),
-                        childAtPosition(
-                            withId(R.id.frame_layout),
-                            0
-                        )
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatImageView4.perform(click())
 
         val bottomNavigationItemView2 = onView(
             allOf(

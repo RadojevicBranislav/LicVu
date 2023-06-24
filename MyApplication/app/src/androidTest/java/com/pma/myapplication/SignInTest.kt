@@ -20,14 +20,14 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class SignInActivityTest {
+class SignInTest {
 
     @Rule
     @JvmField
     var mActivityScenarioRule = ActivityScenarioRule(SignInActivity::class.java)
 
     @Test
-    fun signInActivityTest() {
+    fun signInTest() {
         val appCompatEditText = onView(
             allOf(
                 withId(R.id.editTextTextEmailAddress),
@@ -41,7 +41,7 @@ class SignInActivityTest {
                 isDisplayed()
             )
         )
-        appCompatEditText.perform(replaceText("veljko@gmail.com"), closeSoftKeyboard())
+        appCompatEditText.perform(replaceText("pajo@gmail.com"), closeSoftKeyboard())
 
         val appCompatEditText2 = onView(
             allOf(
@@ -56,11 +56,11 @@ class SignInActivityTest {
                 isDisplayed()
             )
         )
-        appCompatEditText2.perform(replaceText("veljanevolja"), closeSoftKeyboard())
+        appCompatEditText2.perform(replaceText("pajo123"), closeSoftKeyboard())
 
         val appCompatEditText3 = onView(
             allOf(
-                withId(R.id.editTextTextPassword), withText("veljanevolja"),
+                withId(R.id.editTextTextPassword), withText("pajo123"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -103,22 +103,43 @@ class SignInActivityTest {
         )
         bottomNavigationItemView.perform(click())
 
-        val bottomNavigationItemView2 = onView(
+        val appCompatImageView = onView(
             allOf(
-                withId(R.id.home), withContentDescription("Cash"),
+                withId(R.id.img_usa), withContentDescription("Language change icon for English"),
                 childAtPosition(
-                    childAtPosition(
-                        withId(R.id.bottomNavigationView),
-                        0
+                    allOf(
+                        withId(R.id.app),
+                        childAtPosition(
+                            withId(R.id.frame_layout),
+                            0
+                        )
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatImageView.perform(click())
+
+        val appCompatImageView2 = onView(
+            allOf(
+                withId(R.id.img_srb), withContentDescription("Language change icon for Serbian"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.app),
+                        childAtPosition(
+                            withId(R.id.frame_layout),
+                            0
+                        )
                     ),
                     0
                 ),
                 isDisplayed()
             )
         )
-        bottomNavigationItemView2.perform(click())
+        appCompatImageView2.perform(click())
 
-        val bottomNavigationItemView3 = onView(
+        val bottomNavigationItemView2 = onView(
             allOf(
                 withId(R.id.logout), withContentDescription("Log Out"),
                 childAtPosition(
@@ -131,22 +152,7 @@ class SignInActivityTest {
                 isDisplayed()
             )
         )
-        bottomNavigationItemView3.perform(click())
-
-        val materialTextView = onView(
-            allOf(
-                withId(R.id.textView), withText("Don't have an account? Register."),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    4
-                ),
-                isDisplayed()
-            )
-        )
-        materialTextView.perform(click())
+        bottomNavigationItemView2.perform(click())
     }
 
     private fun childAtPosition(
