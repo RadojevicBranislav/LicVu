@@ -30,9 +30,11 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
         Picasso.get().load(currentItem.image).into(holder.image)
 
-        holder.value.text = currentItem.value
+        holder.value.text = currentItem.name
 
-        holder.rating.text = currentItem.rating + " kcal"
+        holder.rating.text = currentItem.type
+
+        holder.height.text = currentItem.height
 
         //println(currentItem.image + " " + currentItem.value)
 
@@ -57,6 +59,8 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
         val value: TextView = itemView.findViewById(R.id.currency_name)
 
         val rating : TextView = itemView.findViewById(R.id.astronaut_craft)
+
+        val height: TextView = itemView.findViewById(R.id.meters)
     }
 
 }

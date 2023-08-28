@@ -8,9 +8,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_baseline_shopping_basket_24"
-        android:label="Calories App"
-        android:roundIcon="@drawable/ic_baseline_shopping_basket_24"
+        android:icon="@drawable/mountain"
+        android:label="Mountain App"
+        android:roundIcon="@drawable/mountain"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">

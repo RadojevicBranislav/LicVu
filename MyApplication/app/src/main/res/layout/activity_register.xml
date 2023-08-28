@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/a1"
+    android:background="@drawable/a2"
     tools:context=".RegisterActivity">
 
     <EditText
@@ -74,7 +74,7 @@
         android:layout_width="160dp"
         android:layout_height="201dp"
         android:contentDescription="@string/logo"
-        android:src="@drawable/ic_baseline_shopping_basket_24"
+        android:src="@drawable/mountain"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

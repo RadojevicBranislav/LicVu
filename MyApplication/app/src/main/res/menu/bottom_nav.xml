@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Food"
+    <item android:title="Mountains"
         android:id="@+id/home"
-        android:icon="@drawable/ic_baseline_shopping_basket_24"/>
+        android:icon="@drawable/mountain"/>
     <item android:title="App Info"
         android:id="@+id/profile"
         android:icon="@drawable/ic_baseline_info_24"/>
