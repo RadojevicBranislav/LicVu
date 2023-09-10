@@ -20,14 +20,29 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class SignInAndLanguageChangeTest {
+class RegisterSignInTest {
 
     @Rule
     @JvmField
     var mActivityScenarioRule = ActivityScenarioRule(SignInActivity::class.java)
 
     @Test
-    fun signInAndLanguageChangeTest() {
+    fun registerSignInTest() {
+        val materialTextView = onView(
+            allOf(
+                withId(R.id.textView), withText("Don't have an account? Register."),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    4
+                ),
+                isDisplayed()
+            )
+        )
+        materialTextView.perform(click())
+
         val appCompatEditText = onView(
             allOf(
                 withId(R.id.editTextTextEmailAddress),
@@ -41,7 +56,7 @@ class SignInAndLanguageChangeTest {
                 isDisplayed()
             )
         )
-        appCompatEditText.perform(replaceText("bilja@gmail.com"), closeSoftKeyboard())
+        appCompatEditText.perform(replaceText("a2@gmail.com"), closeSoftKeyboard())
 
         val appCompatEditText2 = onView(
             allOf(
@@ -56,11 +71,71 @@ class SignInAndLanguageChangeTest {
                 isDisplayed()
             )
         )
-        appCompatEditText2.perform(replaceText("bilja123"), closeSoftKeyboard())
+        appCompatEditText2.perform(replaceText("sifra123"), closeSoftKeyboard())
 
         val appCompatEditText3 = onView(
             allOf(
-                withId(R.id.editTextTextPassword), withText("bilja123"),
+                withId(R.id.editTextTextPassword2),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText3.perform(replaceText("sifra123"), closeSoftKeyboard())
+
+        val appCompatEditText4 = onView(
+            allOf(
+                withId(R.id.editTextTextPassword2), withText("sifra123"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText4.perform(pressImeActionButton())
+
+        val materialButton = onView(
+            allOf(
+                withId(R.id.button), withText("REGISTER"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    4
+                ),
+                isDisplayed()
+            )
+        )
+        materialButton.perform(click())
+
+        val appCompatEditText5 = onView(
+            allOf(
+                withId(R.id.editTextTextEmailAddress),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText5.perform(replaceText("a2@gmail.com"), closeSoftKeyboard())
+
+        val appCompatEditText6 = onView(
+            allOf(
+                withId(R.id.editTextTextPassword),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -71,9 +146,24 @@ class SignInAndLanguageChangeTest {
                 isDisplayed()
             )
         )
-        appCompatEditText3.perform(pressImeActionButton())
+        appCompatEditText6.perform(replaceText("sifra123"), closeSoftKeyboard())
 
-        val materialButton = onView(
+        val appCompatEditText7 = onView(
+            allOf(
+                withId(R.id.editTextTextPassword), withText("sifra123"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText7.perform(pressImeActionButton())
+
+        val materialButton2 = onView(
             allOf(
                 withId(R.id.button), withText("SIGN IN"),
                 childAtPosition(
@@ -86,7 +176,7 @@ class SignInAndLanguageChangeTest {
                 isDisplayed()
             )
         )
-        materialButton.perform(click())
+        materialButton2.perform(click())
 
         val bottomNavigationItemView = onView(
             allOf(

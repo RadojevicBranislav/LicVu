@@ -8,9 +8,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/mountain"
-        android:label="Mountain App"
-        android:roundIcon="@drawable/mountain"
+        android:icon="@drawable/wristwatch"
+        android:label="Watches App"
+        android:roundIcon="@drawable/wristwatch"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">

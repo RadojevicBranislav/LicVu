@@ -12,19 +12,19 @@
         android:id="@+id/img_srb"
         android:layout_width="60dp"
         android:layout_height="55dp"
-        android:layout_marginStart="270dp"
+        android:layout_marginStart="250dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/laguage_change_icon_for_serbian"
-        android:src="@drawable/srbija" />
+        android:src="@drawable/serbia" />
 
     <ImageView
         android:id="@+id/img_usa"
         android:layout_width="60dp"
         android:layout_height="55dp"
-        android:layout_marginStart="335dp"
+        android:layout_marginStart="325dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/laguage_change_icon_for_english"
-        android:src="@drawable/amerika" />
+        android:src="@drawable/unitedkingdom" />
 
     <TextView
         android:id="@+id/App_info"

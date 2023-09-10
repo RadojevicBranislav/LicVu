@@ -74,7 +74,7 @@
         android:layout_width="160dp"
         android:layout_height="201dp"
         android:contentDescription="@string/logo"
-        android:src="@drawable/mountain"
+        android:src="@drawable/wristwatch"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
