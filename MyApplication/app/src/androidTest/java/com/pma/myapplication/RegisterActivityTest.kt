@@ -20,14 +20,14 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class RegisterSignInTest {
+class RegisterActivityTest {
 
     @Rule
     @JvmField
     var mActivityScenarioRule = ActivityScenarioRule(SignInActivity::class.java)
 
     @Test
-    fun registerSignInTest() {
+    fun registerActivityTest() {
         val materialTextView = onView(
             allOf(
                 withId(R.id.textView), withText("Don't have an account? Register."),
@@ -56,7 +56,7 @@ class RegisterSignInTest {
                 isDisplayed()
             )
         )
-        appCompatEditText.perform(replaceText("a2@gmail.com"), closeSoftKeyboard())
+        appCompatEditText.perform(replaceText("kris@gmail.com"), closeSoftKeyboard())
 
         val appCompatEditText2 = onView(
             allOf(
@@ -71,7 +71,7 @@ class RegisterSignInTest {
                 isDisplayed()
             )
         )
-        appCompatEditText2.perform(replaceText("sifra123"), closeSoftKeyboard())
+        appCompatEditText2.perform(replaceText("kris123"), closeSoftKeyboard())
 
         val appCompatEditText3 = onView(
             allOf(
@@ -86,39 +86,9 @@ class RegisterSignInTest {
                 isDisplayed()
             )
         )
-        appCompatEditText3.perform(replaceText("sifra123"), closeSoftKeyboard())
+        appCompatEditText3.perform(replaceText("kris123"), closeSoftKeyboard())
 
         val appCompatEditText4 = onView(
-            allOf(
-                withId(R.id.editTextTextPassword2), withText("sifra123"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    2
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatEditText4.perform(pressImeActionButton())
-
-        val materialButton = onView(
-            allOf(
-                withId(R.id.button), withText("REGISTER"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    4
-                ),
-                isDisplayed()
-            )
-        )
-        materialButton.perform(click())
-
-        val appCompatEditText5 = onView(
             allOf(
                 withId(R.id.editTextTextEmailAddress),
                 childAtPosition(
@@ -131,9 +101,9 @@ class RegisterSignInTest {
                 isDisplayed()
             )
         )
-        appCompatEditText5.perform(replaceText("a2@gmail.com"), closeSoftKeyboard())
+        appCompatEditText4.perform(replaceText("kris@gmail.com"), closeSoftKeyboard())
 
-        val appCompatEditText6 = onView(
+        val appCompatEditText5 = onView(
             allOf(
                 withId(R.id.editTextTextPassword),
                 childAtPosition(
@@ -146,37 +116,7 @@ class RegisterSignInTest {
                 isDisplayed()
             )
         )
-        appCompatEditText6.perform(replaceText("sifra123"), closeSoftKeyboard())
-
-        val appCompatEditText7 = onView(
-            allOf(
-                withId(R.id.editTextTextPassword), withText("sifra123"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    1
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatEditText7.perform(pressImeActionButton())
-
-        val materialButton2 = onView(
-            allOf(
-                withId(R.id.button), withText("SIGN IN"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    2
-                ),
-                isDisplayed()
-            )
-        )
-        materialButton2.perform(click())
+        appCompatEditText5.perform(replaceText("kris123"), closeSoftKeyboard())
 
         val bottomNavigationItemView = onView(
             allOf(
@@ -192,6 +132,36 @@ class RegisterSignInTest {
             )
         )
         bottomNavigationItemView.perform(click())
+
+        val bottomNavigationItemView2 = onView(
+            allOf(
+                withId(R.id.home), withContentDescription("Wines"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.bottomNavigationView),
+                        0
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        bottomNavigationItemView2.perform(click())
+
+        val bottomNavigationItemView3 = onView(
+            allOf(
+                withId(R.id.profile), withContentDescription("App Info"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.bottomNavigationView),
+                        0
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        bottomNavigationItemView3.perform(click())
 
         val appCompatImageView = onView(
             allOf(
@@ -229,7 +199,7 @@ class RegisterSignInTest {
         )
         appCompatImageView2.perform(click())
 
-        val bottomNavigationItemView2 = onView(
+        val bottomNavigationItemView4 = onView(
             allOf(
                 withId(R.id.logout), withContentDescription("Log Out"),
                 childAtPosition(
@@ -242,7 +212,7 @@ class RegisterSignInTest {
                 isDisplayed()
             )
         )
-        bottomNavigationItemView2.perform(click())
+        bottomNavigationItemView4.perform(click())
     }
 
     private fun childAtPosition(

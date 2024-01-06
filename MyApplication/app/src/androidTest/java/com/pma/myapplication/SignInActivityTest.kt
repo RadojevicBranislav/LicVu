@@ -29,88 +29,123 @@ class SignInActivityTest {
     @Test
     fun signInActivityTest() {
         val appCompatEditText = onView(
-allOf(withId(R.id.editTextTextEmailAddress),
-childAtPosition(
-childAtPosition(
-withId(android.R.id.content),
-0),
-0),
-isDisplayed()))
-        appCompatEditText.perform(replaceText("a2@gmail.com"), closeSoftKeyboard())
-        
+            allOf(
+                withId(R.id.editTextTextEmailAddress),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText.perform(replaceText("b7@gmail.com"), closeSoftKeyboard())
+
         val appCompatEditText2 = onView(
-allOf(withId(R.id.editTextTextPassword),
-childAtPosition(
-childAtPosition(
-withId(android.R.id.content),
-0),
-1),
-isDisplayed()))
-        appCompatEditText2.perform(replaceText("sifra123"), closeSoftKeyboard())
-        
-        val appCompatEditText3 = onView(
-allOf(withId(R.id.editTextTextPassword), withText("sifra123"),
-childAtPosition(
-childAtPosition(
-withId(android.R.id.content),
-0),
-1),
-isDisplayed()))
-        appCompatEditText3.perform(pressImeActionButton())
-        
-        val materialButton = onView(
-allOf(withId(R.id.button), withText("SIGN IN"),
-childAtPosition(
-childAtPosition(
-withId(android.R.id.content),
-0),
-2),
-isDisplayed()))
-        materialButton.perform(click())
-        
+            allOf(
+                withId(R.id.editTextTextPassword),
+                childAtPosition(
+                    childAtPosition(
+                        withId(android.R.id.content),
+                        0
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText2.perform(replaceText("bane123"), closeSoftKeyboard())
+
         val bottomNavigationItemView = onView(
-allOf(withId(R.id.profile), withContentDescription("App Info"),
-childAtPosition(
-childAtPosition(
-withId(R.id.bottomNavigationView),
-0),
-1),
-isDisplayed()))
+            allOf(
+                withId(R.id.profile), withContentDescription("App Info"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.bottomNavigationView),
+                        0
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
         bottomNavigationItemView.perform(click())
-        
+
+        val appCompatImageView = onView(
+            allOf(
+                withId(R.id.img_srb), withContentDescription("Language change icon for Serbian"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.app),
+                        childAtPosition(
+                            withId(R.id.frame_layout),
+                            0
+                        )
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatImageView.perform(click())
+
+        val appCompatImageView2 = onView(
+            allOf(
+                withId(R.id.img_usa), withContentDescription("Language change icon for English"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.app),
+                        childAtPosition(
+                            withId(R.id.frame_layout),
+                            0
+                        )
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatImageView2.perform(click())
+
+        val appCompatImageView3 = onView(
+            allOf(
+                withId(R.id.img_srb), withContentDescription("Language change icon for Serbian"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.app),
+                        childAtPosition(
+                            withId(R.id.frame_layout),
+                            0
+                        )
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatImageView3.perform(click())
+
         val bottomNavigationItemView2 = onView(
-allOf(withId(R.id.logout), withContentDescription("Log Out"),
-childAtPosition(
-childAtPosition(
-withId(R.id.bottomNavigationView),
-0),
-2),
-isDisplayed()))
+            allOf(
+                withId(R.id.logout), withContentDescription("Log Out"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.bottomNavigationView),
+                        0
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
         bottomNavigationItemView2.perform(click())
-        
-        val materialTextView = onView(
-allOf(withId(R.id.textView), withText("Don't have an account? Register."),
-childAtPosition(
-childAtPosition(
-withId(android.R.id.content),
-0),
-4),
-isDisplayed()))
-        materialTextView.perform(click())
-        
-        val materialTextView2 = onView(
-allOf(withId(R.id.textView), withText("Already registered, sign in!"),
-childAtPosition(
-childAtPosition(
-withId(android.R.id.content),
-0),
-5),
-isDisplayed()))
-        materialTextView2.perform(click())
-        }
-    
+    }
+
     private fun childAtPosition(
-            parentMatcher: Matcher<View>, position: Int): Matcher<View> {
+        parentMatcher: Matcher<View>, position: Int
+    ): Matcher<View> {
 
         return object : TypeSafeMatcher<View>() {
             override fun describeTo(description: Description) {
@@ -125,4 +160,4 @@ isDisplayed()))
             }
         }
     }
-    }
+}
